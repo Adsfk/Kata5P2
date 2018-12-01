@@ -7,9 +7,9 @@ import java.util.List;
 
 public class MailHistogramBuilder {
 
-    public Histogram<String> build(List<Mail> mailList){
+    public Histogram<String> build(List<String> mailList){
         Histogram<String> histo = new Histogram<>();
-        mailList.forEach(e -> histo.increment(e.getDomain()));
+        mailList.forEach(e -> histo.increment(e));
         return histo;
     }
 }
